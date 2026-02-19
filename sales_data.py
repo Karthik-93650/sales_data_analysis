@@ -1,6 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 df = pd.read_excel("sales_data.xlsx")
+df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+
+df.to_excel("sales_data.xlsx", index=False)
 
 print(df.head())
 print(df.info())
